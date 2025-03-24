@@ -1,0 +1,42 @@
+/* FONTS */
+@font-face {
+  font-family: 'Santralmedium';
+  src: url('../../../fonts/Santral-Medium.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SantralBold';
+  src: url('../../../fonts/Santral-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SantralRegular';
+  src: url('../../../fonts/Santral-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+// mont font
+$regular: 'SantralRegular';
+.regular {
+  font-family: $regular !important;
+}
+
+$medium: 'Santralmedium';
+.medium {
+  font-family: $medium !important;
+}
+
+$semi-bold: 'SantralBold';
+.bold {
+  font-family: $semi-bold !important;
+}
+
+.font-family-regular {
+  font-family: $regular;
+}
+.font-family-bold {
+  font-family: $medium !important;
+}

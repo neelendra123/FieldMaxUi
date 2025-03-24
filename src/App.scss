@@ -1,0 +1,122 @@
+//Table of Content
+
+/*--------------
+1.0 Bootstrap
+----------------*/
+/*--------------
+2.0 Custom Variables
+----------------*/
+/*--------------
+3.0 Theme Style
+   3.1 Utilities
+   
+      3.1.1 Base
+      3.1.2 Custom Shapes
+      3.1.3 Custom Buttons
+      3.1.4 Custom Forms
+      3.1.5 Spacer
+      3.1.6 Rtl
+   
+   3.2 Core
+  
+      3.2.1 Reset
+      3.2.2 Header
+      3.2.3 Preloader
+      3.2.4 Footer
+   
+   3.3 Sections
+      3.3.1 Banner Section
+      3.3.2 Services Section
+      3.3.3 Recent Work Section
+      3.3.4 Blog Section
+      3.3.5 Slider Element Section
+      3.3.6 Testimonial Section
+      3.3.7 Contact Section
+      3.3.8 Explore Studio Section
+      3.3.9 Subscribe Section
+      3.3.10 Team Section
+   3.4 Pages
+      3.4.1 Pricing Page
+      3.4.2 About Page
+      3.4.3 Services Page
+      3.4.4 Portfolio Page
+      3.4.5 Search Page
+      3.4.6 Comingsoon Page
+      3.4.7 Maintenance Page
+      3.4.8 404 Page
+      3.4.9 Faq Page
+      3.4.10 Session Page
+      3.4.11 Process Page
+      3.4.12 Team Page
+----------------*/
+/*--------------
+4.0 Responsive
+----------------*/
+
+// 1.0 Bootstrap
+
+@import "./assets/scss/bootstrap/functions";
+
+//Override Bootstrap
+@import "./assets/scss/theme/bootstrap-override";
+@import "./assets/scss/bootstrap/variables";
+
+@import "./assets/scss/bootstrap/mixins";
+
+// Bootstrap components
+
+@import "./assets/scss/bootstrap/root";
+@import "./assets/scss/bootstrap/reboot";
+@import "./assets/scss/bootstrap/type";
+@import "./assets/scss/bootstrap/images";
+@import "./assets/scss/bootstrap/code";
+@import "./assets/scss/bootstrap/grid";
+@import "./assets/scss/bootstrap/tables";
+@import "./assets/scss/bootstrap/forms";
+@import "./assets/scss/bootstrap/buttons";
+@import "./assets/scss/bootstrap/transitions";
+@import "./assets/scss/bootstrap/dropdown";
+@import "./assets/scss/bootstrap/button-group";
+@import "./assets/scss/bootstrap/input-group";
+@import "./assets/scss/bootstrap/custom-forms";
+@import "./assets/scss/bootstrap/nav";
+@import "./assets/scss/bootstrap/navbar";
+@import "./assets/scss/bootstrap/card";
+@import "./assets/scss/bootstrap/breadcrumb";
+@import "./assets/scss/bootstrap/pagination";
+@import "./assets/scss/bootstrap/badge";
+@import "./assets/scss/bootstrap/jumbotron";
+@import "./assets/scss/bootstrap/alert";
+// @import "./assets/scss/bootstrap/progress";
+@import "./assets/scss/bootstrap/media";
+@import "./assets/scss/bootstrap/list-group";
+@import "./assets/scss/bootstrap/close";
+@import "./assets/scss/bootstrap/modal";
+@import "./assets/scss/bootstrap/tooltip";
+@import "./assets/scss/bootstrap/popover";
+// @import "./assets/scss/bootstrap/carousel";
+@import "./assets/scss/bootstrap/utilities";
+@import "./assets/scss/bootstrap/print";
+
+@import "./assets/scss/theme/custom-variables";
+@import "./assets/scss/theme/theme";
+@import "./assets/scss/theme/responsive";
+
+.Toastify {
+   position: absolute;
+   z-index: 999999;
+}
+
+.spinner {
+   animation: spin infinite 5s linear;
+   /*You can increase or decrease the timer (5s) to 
+    increase or decrease the speed of the spinner*/
+ }
+@keyframes spin {
+ from {
+   transform: rotate(0deg);
+ }
+ to {
+   transform: rotate(360deg);
+ }
+}

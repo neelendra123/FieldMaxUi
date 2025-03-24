@@ -1,0 +1,61 @@
+.custom-card {
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .custom-card .card-title {
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
+  .custom-card .card-text {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
+  .custom-card .card-button {
+    background-color: #4FD44C;
+    border: none;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .custom-card .card-details {
+    background-color: #f5f5f5;
+    padding: 2px;
+  }
+  
+  .custom-card .card-details p {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .custom-card .card-balance {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .card-date {
+    display: inline;
+    font-size: 10px;    
+  }
+  .card-currency {
+    display: inline;
+    font-size: 10px;    
+  }
+  .form-control {
+    background: #f8f8f8;
+    border-radius: 4px;
+    border: none;
+    font-size: 13px;
+    padding: 1px 0px;
+    width: 105%;
+}

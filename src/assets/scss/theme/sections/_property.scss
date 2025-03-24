@@ -1,0 +1,35 @@
+// property tab
+
+.w-md-100 {
+  width: initial;
+}
+
+@include media-breakpoint-down(md) {
+  .w-md-100 {
+    width: 100%;
+  }
+}
+
+
+.unit-container {
+  background-color: var(--primaryLight);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.map-container-sm {
+  background-color: #e7e7e7;
+  overflow: auto;
+  height: 130px;
+
+}
+
+.min-30 {
+  min-width: 30px;
+}
+
+.col-special {
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
+}

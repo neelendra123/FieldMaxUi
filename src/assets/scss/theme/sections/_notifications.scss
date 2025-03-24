@@ -1,0 +1,22 @@
+.notification-row {
+  position: relative;
+  height: 43px;
+  img {
+    width: 43px;
+    height: 43px;
+    margin-right: 0px;
+    border-radius: 50%;
+  }
+  .float-icon {
+    position: absolute;
+    right: 0;
+    bottom: -7px;
+
+    svg {
+      height: 20px;
+      rect {
+        fill: #edfbed;
+      }
+    }
+  }
+}

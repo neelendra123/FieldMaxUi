@@ -1,0 +1,110 @@
+import Joi from 'joi';
+
+import { apiURLV1 } from './config';
+import * as interfaces from './interfaces';
+
+export const CommonPerms: Record<interfaces.ICommonPermTypes, number> = {
+  none: 1 << 0,
+  all: 1 << 1,
+  view: 1 << 2,
+  add: 1 << 3,
+  edit: 1 << 4,
+  delete: 1 << 5,
+  timeline: 1 << 6,
+  invite: 1 << 7,
+};
+
+export const STATUS_CODES = {
+  SUCCESS: 200,
+  CREATED: 201,
+
+  VALIDATION_FAILED: 400,
+  ACTION_FAILED: 400,
+  AUTH_FAILED: 401,
+  FORBIDDEN: 403,
+  NOT_FOUND: 404,
+
+  ERROR: 500,
+};
+
+export const ApiCommonURLs = {
+  preSignedURLs: `${apiURLV1}/common/preSignedURLs`,
+  decodeJWT: `common/decodeJWT/:token`,
+};
+
+export const MESSAGES = {
+  loginRequired: 'Please login first to continue',
+  loggedOutSuccess: 'Logged out successfully',
+  errorMsg: 'Something went wrong please try again',
+  requestCancel: 'Operation canceled due to new request.',
+};
+
+export const defaultTableSort: interfaces.ICommonSort = { updatedAt: -1 };
+
+export const StatusFilterValues = {
+  active: 1 << 0,
+  inActive: 1 << 1,
+  deleted: 1 << 2,
+};
+
+export const StatusFilterOptions: interfaces.IStatusFilterOptions[] = [
+  { value: StatusFilterValues.active, label: 'Active' },
+  { value: StatusFilterValues.inActive, label: 'InActive' },
+  { value: StatusFilterValues.deleted, label: 'Deleted' },
+];
+export const StatusWorkOrderFilterOptions: interfaces.IStatusWorkOrderFilterOptions[] = [
+  { value: 'paid', label: 'Paid' },
+  { value: 'unpaid', label: 'Unpaid' },
+  { value: 'partial', label: 'Partial' },
+];
+export const SortOrderFilterOptions: {
+  value: 1 | -1;
+  label: string;
+}[] = [
+  { value: -1, label: 'Descending' },
+  { value: 1, label: 'Ascending' },
+];
+
+export const emailValSchema = Joi.string()
+  .trim()
+  .lowercase()
+  .email({ tlds: { allow: false } });
+export const passwordSchema = Joi.string().min(6);
+
+export const latSchema = Joi.number().min(-80).max(80);
+export const lngSchema = Joi.number().min(-180).max(180);
+
+export const Colors = [
+  '#00c0ef',
+  '#ad4ca4',
+  '#3c8dbc',
+  '#00a65a',
+  '#f39c12',
+  '#FF851B',
+  '#39CCCC',
+  '#01FF70',
+  '#dd4b39',
+  '#605ca8',
+  '#F012BE',
+  '#d2d6de',
+  '#001F3F',
+  '#0073b7',
+  '#D81B60',
+];
+
+export const DefaultCommonMediaUpload: interfaces.ICommonMediaUpload = {
+  mediaURL: '',
+  type: '',
+  name: '',
+};
+
+export const DummyPhotoBase64 =
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAwYAAAGDCAYAAACRJAeWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAa5SURBVHhe7dcxAQAgAAQh633/QHo9ZCAEZ9sFAAD+JgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAYgAAAEQMAAAAMQAAAMQAAACIGAAAAGIAAACIAQAAEDEAAADEAAAAEAMAACBiAAAAiAEAACAGAABAxAAAABADAABADAAAgIgBAAAgBgAAgBgAAAARAwAAQAwAAAAxAAAAIgYAAIAYAAAAuw/OePQ/gxWwiQAAAABJRU5ErkJggg==';
+
+export const GoogleMapLibTypes: (
+  | 'places'
+  | 'drawing'
+  | 'geometry'
+  | 'localContext'
+  | 'visualization'
+)[] = ['places'];

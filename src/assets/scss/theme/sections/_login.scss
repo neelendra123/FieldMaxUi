@@ -1,0 +1,99 @@
+/*========signup-2 & login==========*/
+.login-wrap {
+  background-image: url('../../../images/login-image.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  // height: 300px;
+  position: relative;
+  padding: 2rem 0rem;
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+  }
+  .contact-form-wrap {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-right: 8rem;
+  }
+  .forgot-password-link {
+    margin-top: 20px;
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  .link-register a {
+    color: $primary;
+  }
+}
+
+.session-wrap .custom-shape.pos-size-3 {
+  left: 105px;
+}
+.session-content {
+  width: 485px;
+  border-radius: 15px;
+  padding: 3rem;
+}
+.session-content .form-control {
+  padding: 0.8rem 1rem;
+}
+
+@media (max-width: 992px) {
+  .login-wrap .contact-form-wrap {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-right: 0rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .session-wrap .session-content {
+    padding: 1.5rem;
+    width: 90%;
+  }
+}
+
+/*forms*/
+.login-wrap .form-control {
+  height: 47px;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+}
+.login-wrap .title {
+  color: #2f2f2f;
+  font-size: 25px;
+  text-align: left;
+  margin-bottom: 40px;
+  font-family: $medium;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 31px;
+}
+.form-group label {
+  color: #3b3b3b;
+  // font-family: $medium;
+  font-size: 14px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  line-height: 17px;
+}
+.login-wrap .form-group .btn {
+  height: 46px;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: $primary;
+  color: #fff;
+  line-height: 30px;
+}
+.login-wrap .logo-wrap img {
+  width: 260px;
+  margin-bottom: 25px;
+}
